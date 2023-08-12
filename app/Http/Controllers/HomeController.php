@@ -13,24 +13,19 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('home');
+        $this->middleware('auth')->except(['about','home']);
     }
 
-    /**
-     * Show the application home.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+    public function about()
+    {
+        return view('about');
+    }
+
     public function home()
     {
         return view('home');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function dashboard()
     {
         return view('dashboard');
