@@ -15,6 +15,11 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->integer('group_id')->default(0);
+            $table->float('quantity');
+            $table->float('total');
+            $table->enum('type', ['stock in', 'stock out', 'sale', 'expired']);
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
