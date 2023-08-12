@@ -4,9 +4,9 @@ A laravel point of sale project
 
 ## Requirements
 
--   PHP
+-   PHP 7+
 -   MySQL
--   Composer
+-   Composer 2+
 
 ## Installation
 
