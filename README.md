@@ -14,6 +14,7 @@ A laravel point of sale project
 -   git clone https://github.com/6hislain/point-of-sale-laravel
 -   composer install
 -   npm install
+-   php artisan migrate
 -   php artisan serve
 
 ### TODO
