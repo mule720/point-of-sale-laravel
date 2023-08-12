@@ -5,13 +5,15 @@ A laravel point of sale project
 ## Requirements
 
 -   PHP 7+
--   MySQL
+-   MySQL 5+
 -   Composer 2+
+-   Npm 8+
 
 ## Installation
 
 -   git clone https://github.com/6hislain/point-of-sale-laravel
 -   composer install
+-   npm install
 -   php artisan serve
 
 ### TODO
