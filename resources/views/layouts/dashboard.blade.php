@@ -19,13 +19,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
     <link rel='shortcut icon' herf='/favicon.ico'>
 </head>
 
 <body>
     <div id="app">
-        @include('components.navbar')
-        <main class="py-4">@yield('content')</main>
+        @include('components.sidebar')
+        <main class="w-100 py-4">@yield('content')</main>
     </div>
 </body>
 
