@@ -20,6 +20,13 @@ class CreateTransactionsTable extends Migration
             $table->float('total');
             $table->enum('type', ['stock in', 'stock out', 'sale', 'expired']);
             $table->text('description')->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->bigInteger('store_id')->unsigned()->nullable();
+            $table->bigInteger('product_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->nullOnDelete();
+            $table->foreign('store_id')->references('id')->on('stores')->nullOnDelete();
+            $table->foreign('product_id')->references('id')->on('products')->nullOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ class CreatePermissionsTable extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
+            $table->string('section')->unique();
+            $table->enum('level', ['read', 'write', 'hidden'])->default('hidden');
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->bigInteger('user_group_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->nullOnDelete();
+            $table->foreign('user_group_id')->references('id')->on('user_groups')->nullOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

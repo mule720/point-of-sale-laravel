@@ -15,11 +15,14 @@ class CreateBuyersTable extends Migration
     {
         Schema::create('buyers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->nullOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

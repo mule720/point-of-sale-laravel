@@ -20,7 +20,10 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', ['user', 'admin'])->default('user');
             $table->string('password');
+            $table->bigInteger('user_group_id')->unsigned()->nullable();
+            $table->foreign('user_group_id')->references('id')->on('user_groups');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

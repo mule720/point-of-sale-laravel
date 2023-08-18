@@ -21,6 +21,9 @@ class CreateStoresTable extends Migration
             $table->string('address')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->nullOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
