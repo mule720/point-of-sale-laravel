@@ -11,7 +11,7 @@ html {
 #app {
   display: flex;
   flex-wrap: nowrap;
-  height: 100vh;
+  height: 100vh !important;
   height: -webkit-fill-available;
   max-height: 100vh;
   overflow-x: auto;
